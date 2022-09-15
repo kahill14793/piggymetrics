@@ -1,5 +1,5 @@
 FROM java:8-jre
-MAINTAINER Alexander Lukyanchikov <sqshq@sqshq.com>
+MAINTAINER ThoND <thond@smac.com.vn>
 
 ADD ./target/gateway.jar /app/
 CMD ["java", "-Xmx200m", "-jar", "/app/gateway.jar"]
