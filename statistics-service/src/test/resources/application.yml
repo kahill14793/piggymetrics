@@ -9,7 +9,7 @@ hystrix:
 spring:
   data:
     mongodb:
-      database: piggymetrics
+      database: pcs-db
       port: 0
 
 rates:

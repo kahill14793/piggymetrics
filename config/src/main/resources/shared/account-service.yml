@@ -10,11 +10,11 @@ security:
 spring:
   data:
     mongodb:
-      host: account-mongodb
-      username: user
+      host: ${DB_ACCOUNT_HOST}
+      username: root
       password: ${MONGODB_PASSWORD}
-      database: piggymetrics
-      port: 27017
+      database: pcs-db
+      port: 27019
 
 server:
   servlet:

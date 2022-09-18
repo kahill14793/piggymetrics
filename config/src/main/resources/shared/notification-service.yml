@@ -28,11 +28,11 @@ backup:
 spring:
   data:
     mongodb:
-      host: notification-mongodb
-      username: user
+      host: ${DB_NOTIFICATION_HOST}
+      username: root
       password: ${MONGODB_PASSWORD}
-      database: piggymetrics
-      port: 27017
+      database: pcs-db
+      port: 27019
   mail:
     host: smtp.gmail.com
     port: 465
