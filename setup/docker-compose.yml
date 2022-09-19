@@ -6,7 +6,7 @@ services:
     image: mongo-pcs:latest
     restart: always
     volumes:
-      - './data/mongodb:/data/db'
+      - './mongodb/data:/data/db'
     ports:
       - "27019:27017"
     environment:
@@ -16,6 +16,8 @@ services:
   mongo-express:
     image: mongo-express
     restart: always
+    depends_on:
+      - mongo
     ports:
       - 8088:8081
     environment:
@@ -24,11 +26,10 @@ services:
       ME_CONFIG_MONGODB_URL: mongodb://root:Smac123@mongo:27017/
 
   rabbitmq:
-    build: rabbitmq/.
-    container_name: rabbitmq
+    image: rabbitmq-pcs:latest
     volumes:
-      - $PWD/rabbitmq/data/:/var/lib/rabbitmq/
-      - $PWD/rabbitmq/logs/:/var/log/rabbitmq/
+      - ./rabbitmq/data/:/var/lib/rabbitmq/
+      - ./rabbitmq/logs/:/var/log/rabbitmq/
     environment:
       RABBITMQ_DEFAULT_USER: guest
       RABBITMQ_DEFAULT_PASS: guest

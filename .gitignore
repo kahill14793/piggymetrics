@@ -9,7 +9,9 @@
 # Maven
 log/
 target/
-/mongodb/data/
+/setup/mongodb/data/
+/setup/rabbitmq/data/
+/setup/rabbitmq/logs/
 
 # Eclipse
 **/*.project
