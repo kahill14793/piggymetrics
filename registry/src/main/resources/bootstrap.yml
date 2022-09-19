@@ -6,7 +6,7 @@ spring:
     name: registry
   cloud:
     config:
-      uri: http://127.0.0.1:8888
+      uri: ${URL_CONFIG_SERVICE}
       fail-fast: true
       password: ${CONFIG_SERVICE_PASSWORD}
       username: user
