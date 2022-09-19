@@ -9,6 +9,7 @@
 # Maven
 log/
 target/
+/mongodb/data/
 
 # Eclipse
 **/*.project
