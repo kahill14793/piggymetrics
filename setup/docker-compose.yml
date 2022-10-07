@@ -39,3 +39,15 @@ services:
       - 15671:15671
       - 15674:15674
       - 61613:61613
+      
+  minio:
+    image: 'bitnami/minio:latest'
+    ports:
+      - '9000:9000'
+      - '9001:9001'
+    volumes:
+      - ./minio-persistence:/data
+    environment:
+      - MINIO_ROOT_USER=minio-root-user
+      - MINIO_ROOT_PASSWORD=minio-root-password
+      
