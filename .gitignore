@@ -12,6 +12,7 @@ target/
 /setup/mongodb/data/
 /setup/rabbitmq/data/
 /setup/rabbitmq/logs/
+/setup/minio-persistence/
 
 # Eclipse
 **/*.project
