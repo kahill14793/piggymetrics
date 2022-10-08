@@ -13,32 +13,17 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: Smac123
 
-  mongo-express:
-    image: mongo-express
-    restart: always
-    depends_on:
-      - mongo
-    ports:
-      - 8088:8081
-    environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: root
-      ME_CONFIG_MONGODB_ADMINPASSWORD: Smac123
-      ME_CONFIG_MONGODB_URL: mongodb://root:Smac123@mongo:27017/
-
-  rabbitmq:
-    image: rabbitmq-pcs:latest
-    volumes:
-      - ./rabbitmq/data/:/var/lib/rabbitmq/
-      - ./rabbitmq/logs/:/var/log/rabbitmq/
-    environment:
-      RABBITMQ_DEFAULT_USER: guest
-      RABBITMQ_DEFAULT_PASS: guest
-    ports:
-      - 5672:5672
-      - 15672:15672
-      - 15671:15671
-      - 15674:15674
-      - 61613:61613
+  # mongo-express:
+    # image: mongo-express
+    # restart: always
+    # depends_on:
+      # - mongo
+    # ports:
+      # - 8088:8081
+    # environment:
+      # ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      # ME_CONFIG_MONGODB_ADMINPASSWORD: Smac123
+      # ME_CONFIG_MONGODB_URL: mongodb://root:Smac123@mongo:27017/
       
   minio:
     image: 'bitnami/minio:latest'
