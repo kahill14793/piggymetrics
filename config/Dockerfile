@@ -1,4 +1,4 @@
-FROM java:8-jre
+FROM 192.168.1.9:5000/openjdk:8
 MAINTAINER ThoND <thond@smac.com.vn>
 
 ADD ./target/config.jar /app/

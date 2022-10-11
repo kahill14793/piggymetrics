@@ -13,26 +13,57 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: Smac123
 
-  # mongo-express:
-    # image: mongo-express
-    # restart: always
-    # depends_on:
-      # - mongo
-    # ports:
-      # - 8088:8081
-    # environment:
-      # ME_CONFIG_MONGODB_ADMINUSERNAME: root
-      # ME_CONFIG_MONGODB_ADMINPASSWORD: Smac123
-      # ME_CONFIG_MONGODB_URL: mongodb://root:Smac123@mongo:27017/
-      
+  mongo-express:
+    image: mongo-express
+    restart: always
+    depends_on:
+      - mongo
+    ports:
+      - 8088:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: Smac123
+      ME_CONFIG_MONGODB_URL: mongodb://root:Smac123@mongo:27017/
+  
+  # khi run tren centos phai chay cau lenh sau: chown -R 1001 .   
   minio:
     image: 'bitnami/minio:latest'
     ports:
-      - '9000:9000'
-      - '9001:9001'
+      - '9900:9000'
+      - '9901:9001'
     volumes:
       - ./minio-persistence:/data
     environment:
-      - MINIO_ROOT_USER=minio-root-user
-      - MINIO_ROOT_PASSWORD=minio-root-password
+      MINIO_ROOT_USER: minio-root-user
+      MINIO_ROOT_PASSWORD: minio-root-password
       
+
+  pcs-config:
+    image: 192.168.1.9:5000/pcs-config:latest
+    restart: always
+    ports:
+      - "8888:8888"
+    environment:
+      CONFIG_SERVICE_PASSWORD: Smac@123
+
+  pcs-registry:
+    image: 192.168.1.9:5000/pcs-registry:latest
+    restart: always
+    depends_on:
+      - "pcs-config"
+    ports:
+      - "8761:8761"
+    environment:
+      CONFIG_SERVICE_PASSWORD: Smac@123
+      URL_CONFIG_SERVICE: http://192.168.1.9:8888
+
+  pcs-gateway:
+    image: 192.168.1.9:5000/pcs-gateway:latest
+    restart: always
+    depends_on:
+      - "pcs-registry"
+    ports:
+      - "4000:4000"
+    environment:
+      CONFIG_SERVICE_PASSWORD: Smac@123
+      URL_CONFIG_SERVICE: http://192.168.1.9:8888
