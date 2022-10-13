@@ -2,3 +2,20 @@
 feign:
   hystrix:
     enabled: true
+    
+camunda:
+  bpm:
+    admin-user:
+      password: noodles
+      id: noodles
+    metrics:
+      db-reporter-activate: 'false'
+    database:
+      schema-update: 'true'
+      
+minio:
+  secretKey: minio-root-password
+  endpoint: http://192.168.1.9:9900
+  accessKey: minio-root-user
+  domain: http://192.168.1.9:9901
+  

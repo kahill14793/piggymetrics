@@ -1,6 +1,8 @@
 logging:
   level:
-    org.springframework.security: INFO
+    org:
+      springframework:
+        security: INFO
 
 hystrix:
   command:
@@ -15,7 +17,7 @@ eureka:
     prefer-ip-address: true
   client:
     serviceUrl:
-      defaultZone: ${URL_EUREKA_SERVICE}
+      defaultZone: http://192.168.1.9:8761/eureka/
 
 security:
   oauth2:
