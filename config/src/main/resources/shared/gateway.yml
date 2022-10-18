@@ -15,7 +15,7 @@ zuul:
   host:
     connect-timeout-millis: 20000
     socket-timeout-millis: 20000
-
+  default-filters: DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials
   routes:
     auth-service:
         path: /uaa/**
