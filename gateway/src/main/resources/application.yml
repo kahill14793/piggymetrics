@@ -1,0 +1,50 @@
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 20000
+
+ribbon:
+  ReadTimeout: 20000
+  ConnectTimeout: 20000
+
+zuul:
+  ignoredServices: '*'
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
+  routes:
+    keycloak-service:
+        path: /auth/**
+        url: http://192.168.1.9:8899
+        stripPrefix: false
+        sensitiveHeaders:
+  
+    auth-service:
+        path: /uaa/**
+        url: http://auth-service:5000
+        stripPrefix: false
+        sensitiveHeaders:
+
+    ecommerce-service:
+        path: /ecommerce-service/**
+        serviceId: ecommerce-service
+        stripPrefix: false
+        sensitiveHeaders:
+
+    sapp-service:
+        path: /sapp-service/**
+        serviceId: sapp-service
+        stripPrefix: false
+        sensitiveHeaders:
+        
+    user-service:
+        path: /user-service/**
+        serviceId: user-service
+        stripPrefix: false
+        sensitiveHeaders:
+
+server:
+  port: 4000
