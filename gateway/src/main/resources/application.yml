@@ -30,19 +30,19 @@ zuul:
 
     ecommerce-service:
         path: /ecommerce-service/**
-        serviceId: ecommerce-service
+        url: http://192.168.1.9:8505
         stripPrefix: false
         sensitiveHeaders:
 
     sapp-service:
         path: /sapp-service/**
-        serviceId: sapp-service
+        url: http://192.168.1.9:8501
         stripPrefix: false
         sensitiveHeaders:
         
     user-service:
         path: /user-service/**
-        serviceId: user-service
+        url: http://192.168.1.9:8503
         stripPrefix: false
         sensitiveHeaders:
 
