@@ -15,29 +15,34 @@ zuul:
   host:
     connect-timeout-millis: 20000
     socket-timeout-millis: 20000
-  default-filters: DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials
   routes:
+    keycloak-service:
+        path: /auth/**
+        url: http://192.168.1.9:8899
+        stripPrefix: false
+        sensitiveHeaders:
+  
     auth-service:
         path: /uaa/**
         url: http://auth-service:5000
         stripPrefix: false
         sensitiveHeaders:
 
-    account-service:
-        path: /accounts/**
-        serviceId: account-service
+    ecommerce-service:
+        path: /ecommerce-service/**
+        url: http://192.168.1.9:8505
         stripPrefix: false
         sensitiveHeaders:
 
-    statistics-service:
-        path: /statistics/**
-        serviceId: statistics-service
+    sapp-service:
+        path: /sapp-service/**
+        url: http://192.168.1.9:8501
         stripPrefix: false
         sensitiveHeaders:
-
-    notification-service:
-        path: /notifications/**
-        serviceId: notification-service
+        
+    user-service:
+        path: /user-service/**
+        url: http://192.168.1.9:8503
         stripPrefix: false
         sensitiveHeaders:
 
