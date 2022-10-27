@@ -11,6 +11,7 @@ ribbon:
   ConnectTimeout: 20000
 
 zuul:
+  ignoredHeaders: Origin
   ignoredServices: '*'
   host:
     connect-timeout-millis: 20000
@@ -32,7 +33,7 @@ zuul:
         path: /ecommerce-service/**
         url: http://192.168.1.9:8505
         stripPrefix: false
-        sensitiveHeaders:
+        sensitiveHeaders: 
 
     sapp-service:
         path: /sapp-service/**
