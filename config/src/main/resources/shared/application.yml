@@ -25,6 +25,8 @@ security:
       user-info-uri: http://127.0.0.1:5000/uaa/users/current
 
 spring:
+  main:
+    allow-circular-references: true
   rabbitmq:
     host: 127.0.0.1
     
@@ -47,5 +49,5 @@ minio:
   secretKey: minio-root-password
   endpoint: http://192.168.1.9:9900
   accessKey: minio-root-user
-  domain: http://192.168.1.9:9901
+  domain: http://192.168.1.9:9900
   
