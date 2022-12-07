@@ -46,6 +46,12 @@ zuul:
         url: http://192.168.1.9:8503
         stripPrefix: false
         sensitiveHeaders:
+        
+    dms-service:
+        path: /dms-service/**
+        url: http://192.168.1.9:8506
+        stripPrefix: false
+        sensitiveHeaders:
 
 server:
   port: 4000
