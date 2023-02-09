@@ -1,4 +1,4 @@
-FROM 192.168.1.9:5000/openjdk:8
+FROM 192.168.10.2:5000/openjdk:8
 MAINTAINER ThoND <thond@smac.com.vn>
 
 ADD ./target/registry.jar /app/

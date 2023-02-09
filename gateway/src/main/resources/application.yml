@@ -19,37 +19,19 @@ zuul:
   routes:
     keycloak-service:
         path: /auth/**
-        url: http://192.168.1.9:8899
-        stripPrefix: false
-        sensitiveHeaders:
-  
-    auth-service:
-        path: /uaa/**
-        url: http://auth-service:5000
-        stripPrefix: false
-        sensitiveHeaders:
-
-    ecommerce-service:
-        path: /ecommerce-service/**
-        url: http://192.168.1.9:8505
-        stripPrefix: false
-        sensitiveHeaders: 
-
-    sapp-service:
-        path: /sapp-service/**
-        url: http://192.168.1.9:8501
+        url: http://192.168.10.9:8899
         stripPrefix: false
         sensitiveHeaders:
         
     user-service:
         path: /user-service/**
-        url: http://192.168.1.9:8503
+        url: http://192.168.10.9:8503
         stripPrefix: false
         sensitiveHeaders:
         
     dms-service:
         path: /dms-service/**
-        url: http://192.168.1.9:8506
+        url: http://192.168.10.9:8506
         stripPrefix: false
         sensitiveHeaders:
 

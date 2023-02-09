@@ -17,18 +17,11 @@ eureka:
     prefer-ip-address: true
   client:
     serviceUrl:
-      defaultZone: http://192.168.1.9:8761/eureka/
-
-security:
-  oauth2:
-    resource:
-      user-info-uri: http://127.0.0.1:5000/uaa/users/current
+      defaultZone: http://192.168.10.9:8761/eureka/
 
 spring:
   main:
     allow-circular-references: true
-  rabbitmq:
-    host: 127.0.0.1
     
 
 feign:
@@ -46,8 +39,8 @@ camunda:
       schema-update: 'true'
       
 minio:
-  secretKey: minio-root-password
-  endpoint: http://192.168.1.9:9900
-  accessKey: minio-root-user
-  domain: http://192.168.1.9:9900
+  secretKey: 123456789
+  endpoint: http://192.168.10.9:9990
+  accessKey: 123456789
+  domain: http://192.168.10.9:9990
   
