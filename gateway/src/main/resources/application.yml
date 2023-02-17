@@ -11,6 +11,7 @@ ribbon:
   ConnectTimeout: 20000
 
 zuul:
+  add-proxy-headers: true
   ignoredHeaders: Origin
   ignoredServices: '*'
   host:
@@ -34,6 +35,13 @@ zuul:
         url: http://192.168.10.9:8506
         stripPrefix: false
         sensitiveHeaders:
+        
+    dms-service-v2:
+        path: /dmsone-service/**
+        url: http://192.168.10.9:8889
+        stripPrefix: false
+        sensitiveHeaders:
 
 server:
   port: 4000
+
