@@ -41,6 +41,24 @@ zuul:
         url: http://192.168.10.9:8889
         stripPrefix: false
         sensitiveHeaders:
+        
+    ams-service:
+        path: /ams-service/**
+        url: http://192.168.10.9:8508
+        stripPrefix: false
+        sensitiveHeaders:
+        
+    iam-service:
+        path: /iam-service/**
+        url: http://192.168.10.9:8507
+        stripPrefix: false
+        sensitiveHeaders:
+        
+    notification-service:
+        path: /notification-service/**
+        url: http://192.168.10.9:8509
+        stripPrefix: false
+        sensitiveHeaders:
 
 server:
   port: 4000
