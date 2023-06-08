@@ -2,15 +2,19 @@ spring:
   cloud:
     config:
       server:
-        native:
-          search-locations: classpath:/shared
-  profiles:
-     active: native
+        git:
+          clone-on-start: 'true'
+          uri: http://172.168.3.10:8081/subuu/configuration-data.git
+          username: smac-subuu
+          password: Smac@123
           
   security:
     user:
-      password: ${CONFIG_SERVICE_PASSWORD}
+      password: Smac@123
 
 server:
   port: 8888
 
+
+
+          
