@@ -3,7 +3,7 @@ spring:
     name: gateway
   cloud:
     config:
-      uri: http://192.168.10.9:8888
+      uri: ${CONFIG_CONFIGURATION_URL}
       fail-fast: true
       password: Smac@123
       username: user

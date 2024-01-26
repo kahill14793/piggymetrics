@@ -20,43 +20,43 @@ zuul:
   routes:
     keycloak-service:
         path: /auth/**
-        url: http://192.168.10.9:8899
+        url: ${CONFIG_KEYCLOAK_URL}
         stripPrefix: false
         sensitiveHeaders:
         
     user-service:
         path: /user-service/**
-        url: http://192.168.10.9:8503
+        url: ${CONFIG_USER_URL}
         stripPrefix: false
         sensitiveHeaders:
         
     dms-service:
         path: /dms-service/**
-        url: http://192.168.10.9:8506
+        url: ${CONFIG_DMS_URL}
         stripPrefix: false
         sensitiveHeaders:
         
     dms-service-v2:
         path: /dmsone-service/**
-        url: http://192.168.10.9:8889
+        url: ${CONFIG_DMSONE_URL}
         stripPrefix: false
         sensitiveHeaders:
         
     ams-service:
         path: /ams-service/**
-        url: http://192.168.10.9:8508
+        url: ${CONFIG_AMS_URL}
         stripPrefix: false
         sensitiveHeaders:
         
     iam-service:
         path: /iam-service/**
-        url: http://192.168.10.9:8507
+        url: ${CONFIG_IAM_URL}
         stripPrefix: false
         sensitiveHeaders:
         
     notification-service:
         path: /notification-service/**
-        url: http://192.168.10.9:8509
+        url: ${CONFIG_NOTIFICATION_URL}
         stripPrefix: false
         sensitiveHeaders:
 
