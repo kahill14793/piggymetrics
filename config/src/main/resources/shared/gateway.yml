@@ -18,13 +18,13 @@ zuul:
   routes:
     keycloak-service:
         path: /auth/**
-        url: http://192.168.10.9:8899
+        url: ${CONFIG_KEYCLOAK_URL}
         stripPrefix: false
         sensitiveHeaders:
         
     user-service:
         path: /user-service/**
-        url: http://192.168.10.9:8503
+        url: ${CONFIG_USER_URL}
         stripPrefix: false
         sensitiveHeaders:
 
