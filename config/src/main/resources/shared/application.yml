@@ -42,5 +42,5 @@ minio:
   secretKey: 123456789
   endpoint: http://192.168.10.9:9990
   accessKey: 123456789
-  domain: https://192.168.10.9:9443
+  domain: https://dms.smac.com.vn:9443
   
