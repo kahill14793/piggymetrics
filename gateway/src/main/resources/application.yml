@@ -59,6 +59,18 @@ zuul:
         url: ${CONFIG_NOTIFICATION_URL}
         stripPrefix: false
         sensitiveHeaders:
+        
+    afiex-dms-console:
+        path: /dms/**
+        url: http://172.168.72.3:8101
+        stripPrefix: false
+        sensitiveHeaders:
+        
+    afiex-ams-console:
+        path: /ams/**
+        url: http://172.168.72.3:8101
+        stripPrefix: false
+        sensitiveHeaders:
 
 server:
   port: 4000
