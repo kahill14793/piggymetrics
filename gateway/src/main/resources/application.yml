@@ -65,6 +65,12 @@ zuul:
         url: http://192.168.10.9:8183
         stripPrefix: false
         sensitiveHeaders:
+    
+    nms-service:
+        path: /nms-service/**
+        url: http://192.168.10.9:8602
+        stripPrefix: false
+        sensitiveHeaders:
 
 server:
   port: 4000
