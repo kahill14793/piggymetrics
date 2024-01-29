@@ -59,6 +59,12 @@ zuul:
         url: http://192.168.10.9:8509
         stripPrefix: false
         sensitiveHeaders:
+        
+    order-service:
+        path: /order-service/**
+        url: http://192.168.10.9:8183
+        stripPrefix: false
+        sensitiveHeaders:
 
 server:
   port: 4000
