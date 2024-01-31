@@ -40,7 +40,7 @@ camunda:
       
 minio:
   secretKey: 123456789
-  endpoint: http://172.168.72.3:9990
+  endpoint: http://172.168.72.5:9990
   accessKey: 123456789
   domain: https://afiex.online
   
