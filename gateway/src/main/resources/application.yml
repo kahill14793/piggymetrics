@@ -71,6 +71,12 @@ zuul:
         url: http://172.168.72.3:8101
         stripPrefix: false
         sensitiveHeaders:
+        
+    minio-service:
+        path: /dms-dev/**
+        url: http://172.168.72.5:9991
+        stripPrefix: false
+        sensitiveHeaders:
 
 server:
   port: 4000

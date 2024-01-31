@@ -1,0 +1,77 @@
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 20000
+
+ribbon:
+  ReadTimeout: 20000
+  ConnectTimeout: 20000
+
+zuul:
+  add-proxy-headers: true
+  ignoredHeaders: Origin
+  ignoredServices: '*'
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
+  routes:
+#    keycloak-service:
+#        path: /auth/**
+#        url: ${CONFIG_KEYCLOAK_URL}
+#        stripPrefix: false
+#        sensitiveHeaders:
+#        
+#    user-service:
+#        path: /user-service/**
+#        url: ${CONFIG_USER_URL}
+#        stripPrefix: false
+#        sensitiveHeaders:
+#        
+#    dms-service:
+#        path: /dms-service/**
+#        url: ${CONFIG_DMS_URL}
+#        stripPrefix: false
+#        sensitiveHeaders:
+#        
+#    dms-service-v2:
+#        path: /dmsone-service/**
+#        url: ${CONFIG_DMSONE_URL}
+#        stripPrefix: false
+#        sensitiveHeaders:
+#        
+#    ams-service:
+#        path: /ams-service/**
+#        url: ${CONFIG_AMS_URL}
+#        stripPrefix: false
+#        sensitiveHeaders:
+#        
+#    iam-service:
+#        path: /iam-service/**
+#        url: ${CONFIG_IAM_URL}
+#        stripPrefix: false
+#        sensitiveHeaders:
+#        
+#    notification-service:
+#        path: /notification-service/**
+#        url: ${CONFIG_NOTIFICATION_URL}
+#        stripPrefix: false
+#        sensitiveHeaders:
+        
+    afiex-dms-console:
+        path: /dms/**
+        url: http://172.168.72.3:8101
+        stripPrefix: false
+        sensitiveHeaders:
+        
+    afiex-ams-console:
+        path: /ams/**
+        url: http://172.168.72.3:8101
+        stripPrefix: false
+        sensitiveHeaders:
+
+server:
+  port: 4000
+
